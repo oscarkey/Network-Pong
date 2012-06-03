@@ -1,9 +1,9 @@
 # Network Pong
 Copyright 2012 Oscar Key, Jack Yuan, Will Kochanski  
 Licensed under GPL v3. See below and COPYING.  
-A single pong game which spans multiple pcs. Front end in pure JS with a node.js server.
+A single pong game which spans multiple pcs/monitors. Front end in pure JS with a node.js server.
 
-Run the server on a machine: 'node server.js'  
+Run the server on a machine: `node server.js`  
 Connect to the server on 80 using a canvas compatible browser from other machines.
 
 **Important note:** there are currently bugs caused by the time it takes to initiate http requests so the ball sometimes jumps about. I will fix these at some point.
