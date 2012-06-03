@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<!--
+Network Pong
+Copyright 2012 Oscar Key, Jack Yuan, Will Kochanski  
+
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	
+	<script type="text/javascript" src="pong.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript" src="menu.js"></script>
+	<script type="text/javascript" src="network.js"></script>
+	
+	<title>Pong</title>
+</head>
+
+<body onLoad="pong.onLoad()">
+	<div id="menuDiv">
+		<h1>Pong</h1>
+		
+		<input type="text" id="addressInput" placeholder="Address"/>
+		<br/>
+		Screen Position:
+		<br/>
+		<input type="range" min="0" max="4" step="1" value="0" id="screenNo" placeholder="screen position" onchange="pong.menu.showPosition()"/>
+		<span id="positionDisplay">0</span>	
+		<br/>
+		Total Number of Screens:
+		<br/>
+		<input type="range" min="2" max="6" step="1" value="2" id="totalScreens" placeholder="number of screens" onchange="pong.menu.screenNum()"/>
+		<span id="numScreens">2</span>
+		<br/>
+		<input type="button" id="connectButton" value="Connect" placeholder="Connect" onclick="pong.menu.onConnectClick()" />
+	    <br/>
+	</div>
+	<div id="gameDiv">
+		<canvas id="pongCanvas">
+			Your browser does not support canvas
+		</canvas>
+	</div>
+</body>
+</html>
