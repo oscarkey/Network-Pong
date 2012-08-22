@@ -20,8 +20,8 @@
 
 // imports
 var http = require("http");
-var path = require('path');
-var fs = require('fs');
+var path = require("path");
+var fs = require("fs");
 
 var requests = [];
 
@@ -53,7 +53,6 @@ function processApiRequest(request, response) {
 	if(request.method == "GET") {
 		// add the request to a queue to be responded to when there is a state update
 		requests[requests.length] = ({request: request, response: response});
-		console.log(getLogIndex() + ": now " + requests.length + " requests in the queue");
 	}
 	if(request.method == "POST") {
 		console.log(getLogIndex() + ": got state to broadcast");
@@ -74,18 +73,18 @@ function processApiRequest(request, response) {
 }
 
 function processStaticFileRequest(request, response) {
-	var filePath = '.' + request.url;
-    if (filePath == './')
-        filePath = './index.html';
+	var filePath = "." + request.url;
+    if (filePath == "./")
+        filePath = "./index.htm";
          
     var extname = path.extname(filePath);
-    var contentType = 'text/html';
+    var contentType = "text/html";
     switch (extname) {
-        case '.js':
-            contentType = 'text/javascript';
+        case ".js":
+            contentType = "text/javascript";
             break;
-        case '.css':
-            contentType = 'text/css';
+        case ".css":
+            contentType = "text/css";
             break;
     }
      
@@ -98,8 +97,8 @@ function processStaticFileRequest(request, response) {
                     response.end();
                 }
                 else {
-                    response.writeHead(200, { 'Content-Type': contentType });
-                    response.end(content, 'utf-8');
+                    response.writeHead(200, { "Content-Type": contentType });
+                    response.end(content, "utf-8");
                 }
             });
         }
